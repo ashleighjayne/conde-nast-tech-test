@@ -38,31 +38,31 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* My overrides specific to website */
+/* My styles specific to website */
 body {
   font-family: sans-serif, Arial, Helvetica; }
 
 h1 {
   font-size: 35px;
-  line-height: 50px;
+  line-height: 1.5;
   font-weight: 700;
-  margin-bottom: 15px; }
+  margin-bottom: 20px; }
 
 h2 {
   font-size: 25px;
-  line-height: 30px;
+  line-height: 1.3;
   font-weight: 600;
   margin-bottom: 10px; }
 
 h5 {
   font-size: 15px;
-  line-height: 20px;
+  line-height: 1.5;
   font-weight: 600;
   margin-bottom: 10px; }
 
 p {
   font-size: 13px;
-  line-height: 20px;
+  line-height: 1.6;
   margin-bottom: 10px; }
 
 a {
@@ -71,8 +71,7 @@ a {
 
 blockquote {
   font-size: 16px;
-  line-height: 20px;
-  margin-bottom: 12px;
+  line-height: 1.3;
   display: -webkit-box;
   padding: 0 15px;
   border-left: 5px solid #ccc;
@@ -82,19 +81,35 @@ blockquote {
     color: #ccc;
     content: open-quote;
     font-size: 50px;
-    line-height: 15px;
+    line-height: .4;
     margin-right: 5px;
     vertical-align: -20px; }
   blockquote:after {
     color: #ccc;
     content: close-quote;
     font-size: 50px;
-    line-height: 10px;
+    line-height: .2;
     margin-right: 5px;
     vertical-align: -20px; }
 
 img {
   width: 100%; }
+
+@media only screen and (max-width: 599px) {
+  h1 {
+    font-size: 30px;
+    line-height: 1.2; }
+  h2 {
+    margin-bottom: 15px;
+    text-align: center; }
+  p {
+    font-size: 15px;
+    margin-bottom: 15px; }
+  blockquote {
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 15px 0;
+    padding: 0 0 0 15px; } }
 
 /* Styles for website/layout */
 .page-header {
@@ -129,6 +144,11 @@ img {
   padding: 10px;
   margin-bottom: 25px; }
 
+@media only screen and (max-width: 599px) {
+  .page-inner {
+    width: 100%;
+    box-shadow: none; } }
+
 /* Article List styling */
 .article-list-item {
   width: 30%;
@@ -149,24 +169,41 @@ img {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; }
 
+@media only screen and (max-width: 599px) {
+  .article-list-item {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 10px; }
+    .article-list-item:focus {
+      background: #e6e6e6;
+      transition: background .2s ease; }
+    .article-list-item figure {
+      border: 1px solid #eee;
+      background: #eee; }
+    .article-list-item figcaption {
+      padding: 0 10px; } }
+
 /* Article styling */
 .article {
   margin: 10px;
   padding: 0 10px; }
-  .article--heading {
-    margin-bottom: 20px;
+  .article--title {
     text-align: center; }
   .article--figure {
     width: 50%;
     float: left;
-    display: flex;
+    display: -webkit-box;
     margin: 0 15px 15px 0; }
+
+@media only screen and (max-width: 599px) {
+  .article--figure {
+    width: 100%; } }
 
 /* Error styling */
 .error-message {
   text-align: center; }
   .error-message .error-message--title {
     font-size: 35px;
-    line-height: 50px;
+    line-height: 1.5;
     font-weight: 700;
     margin-bottom: 15px; }

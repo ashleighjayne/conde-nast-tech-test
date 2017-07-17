@@ -46,35 +46,39 @@ table {
 }
 
 
-/* My overrides specific to website */
+/* My styles specific to website */
+@mixin mobile {
+  @media only screen and (max-width: 599px) { @content; }
+}
+
 body {
     font-family: sans-serif, Arial, Helvetica;
 }
 
 h1 {
     font-size: 35px;
-    line-height: 50px;
+    line-height: 1.5;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 h2 {
     font-size: 25px;
-    line-height: 30px;
+    line-height: 1.3;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 h5 {
     font-size: 15px;
-    line-height: 20px;
+    line-height: 1.5;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
 p {
     font-size: 13px;
-    line-height: 20px;
+    line-height: 1.6;
     margin-bottom: 10px;
 }
 
@@ -85,8 +89,7 @@ a {
 
 blockquote {
     font-size: 16px;
-    line-height: 20px;
-    margin-bottom: 12px;
+    line-height: 1.3;
     display: -webkit-box;
     padding: 0 15px;
     border-left: 5px solid #ccc;
@@ -97,7 +100,7 @@ blockquote {
         color: #ccc;
         content: open-quote;
         font-size: 50px;
-        line-height: 15px;
+        line-height: .4;
         margin-right: 5px;
         vertical-align: -20px;
     }
@@ -106,7 +109,7 @@ blockquote {
         color: #ccc;
         content: close-quote;
         font-size: 50px;
-        line-height: 10px;
+        line-height: .2;
         margin-right: 5px;
         vertical-align: -20px;
     }
@@ -114,6 +117,30 @@ blockquote {
 
 img {
     width: 100%;
+}
+
+@include mobile {
+    h1 {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    blockquote {
+        font-size: 20px;
+        line-height: 1.4;
+        margin: 15px 0;
+        padding: 0 0 0 15px;
+    }
 }
 
 
@@ -159,6 +186,13 @@ img {
     margin-bottom: 25px;
 }
 
+@include mobile {
+    .page-inner {
+        width: 100%;
+        box-shadow: none;
+    }
+}
+
 
 /* Article List styling */
 .article-list {
@@ -189,22 +223,54 @@ img {
     }
 }
 
+@include mobile {
+    .article-list {
+
+        &-item {
+            width: 100%;
+            padding: 0;
+            margin-bottom: 10px;
+
+            &:focus {
+                background: lighten(#ccc, 10%);
+                transition: background .2s ease;
+            }
+
+            figure {
+                border: 1px solid #eee;
+                background: #eee;
+            }
+
+            figcaption {
+                padding: 0 10px;
+            }
+        }
+    }
+}
+
 
 /* Article styling */
 .article {
     margin: 10px;
     padding: 0 10px;
 
-    &--heading {
-        margin-bottom: 20px;
+    &--title {
         text-align: center;
     }
 
     &--figure {
         width: 50%;
         float: left;
-        display: flex;
+        display: -webkit-box;
         margin: 0 15px 15px 0;
+    }
+}
+
+@include mobile {
+    .article {
+        &--figure {
+            width: 100%;
+        }
     }
 }
 
@@ -215,7 +281,7 @@ img {
 
     .error-message--title {
         font-size: 35px;
-        line-height: 50px;
+        line-height: 1.5;
         font-weight: 700;
         margin-bottom: 15px;
     }

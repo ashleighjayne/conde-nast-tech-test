@@ -44,6 +44,8 @@ e.g.    normalise.scss
         article-list.scss
         error.scss
 
+I've included media queries only for mobile, but this could easily be expanded to include tablet other screen sizes.
+
 #### Templates
 As there is no other content appearing on these pages (e.g. ads, hero, gallery), I have created only one layout template which pulls in the correct partials for each page. For a larger project, I would expect that page elements such as article, article list, and page header to built as generic, reusable components. I have set up my partials to conform to this as closely as possible. I would also anticipate that different page types would require different layout templates on a larger project.
 
