@@ -14,7 +14,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-sass": "npm-sass ./src/scss/styles.scss > ./dist/css/styles.css"
+    "build-sass": "npm-sass ./src/scss/styles.scss > ./dist/css/styles.css",
+    "start-server": "nodemon app.js"
   },
   "author": " (Ashleigh Sutton)",
   "license": "ISC"

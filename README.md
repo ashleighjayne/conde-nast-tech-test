@@ -2,41 +2,40 @@
 # Conde Nast Tech Test - Option 1
 
 ## Setup
-------------------------------------------
 This setup require NPM to install packages so please ensure you have node and npm installed.
 
 For the setup, clone the repo from Git and run:
 
 ```js
-npm install
+$ npm install
 ```
 
 You may need to compile templates and styling before viewing the website. To build templates, run:
 
 ```js
-node build.js
+$ node build.js
 ```
 
 And to compile stylesheets, run:
 
 ```js
-npm run build-sass
+$ npm run build-sass
 ```
 
 To start the server, run:
 
 ```js
-./node_modules/nodemon/bin/nodemon.js app.js
+$ npm run start-server
 ```
 
 The website should now be viewable at http://localhost:3000/
 
 
-## About
-------------------------------------------
-For the sake of saving time and for convenience, I have put all the sass into one file.
-The files should be separated in real life situations for better readability and manageability.
-They can then be compiled and concatenated as necessary before release to production. 
+## Notes
+A number of assumptions have been made due to the limitations of this tech test and the availability of time. I have listed the main ones below, but I am happy to answer any questions you might have.
+
+#### Styling
+For the sake of saving time and for convenience, I have put all the sass into one file. The files should be separated in real life situations for better readability and manageability. They can then be compiled and concatenated as necessary before release to production. 
  
 e.g.    normalise.scss
         core-styles.scss
@@ -45,17 +44,20 @@ e.g.    normalise.scss
         article-list.scss
         error.scss
 
-I have also 
+#### Templates
+As there is no other content appearing on these pages (e.g. ads, hero, gallery), I have created only one layout template which pulls in the correct partials for each of the pages. For a larger project, I would expect that page elements such as article, article list, and page header would built as generic, reusable components. I have set up my partials to conform to this as closely as possible. I would also expect that different page types would require different layout templates on a larger project.
+
+#### Javascript
+A limitation might be "the construction/formatting of the data is limited by the use of a single data source (article.json).
 
 
-## Issues
-------------------------------------------
-In case of any issues with setup, the packages can be individaully installed:
+## Setup Issues
+In case of any issues with setup, the packages can be individually installed:
 
 ```js
-npm install express
-npm install nodemon
-npm install handlebars
-npm install just-handlebars-helpers
-npm install npm-sass
+$ npm install express
+$ npm install nodemon
+$ npm install handlebars
+$ npm install just-handlebars-helpers
+$ npm install npm-sass
 ```

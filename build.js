@@ -1,3 +1,4 @@
+
 // Note - article data would probably be loaded asynchronously in the real world
 const articleData = require(__dirname + '/data/article.json');
 const buildConfig = require(__dirname + '/buildConfig.js'); 
