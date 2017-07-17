@@ -54,7 +54,7 @@ I have documented the build.js file using JSDocs but not included the compiled d
 jsdoc build.js
 ```
 
-The construction and formatting of the data in the javascript is meant to handle the limitations of using a single data source (article.json) to populate different types of pages. This is all handled within a single file, however in real world situations where there are many other elements on a page requiring data from different sources, loading data should be handled by separate javascript files.
+The construction and formatting of data in the javascript handles the limitations of using a single data source (article.json) to populate different types of pages. The data is all managed within a single javascript file, however in a real world situation (where there are many other elements on a page requesting data, possibly from different sources), it's cleaner to load data in separate javascript files for each element, and then pass it along to the template builder.
 
 
 ## Setup Issues
