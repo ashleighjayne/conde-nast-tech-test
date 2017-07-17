@@ -163,9 +163,9 @@ img {
     margin: 0 15px 15px 0; }
 
 /* Error styling */
-.error-content {
+.error-message {
   text-align: center; }
-  .error-content .error-title {
+  .error-message .error-message--title {
     font-size: 35px;
     line-height: 50px;
     font-weight: 700;

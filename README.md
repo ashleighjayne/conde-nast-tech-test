@@ -45,10 +45,16 @@ e.g.    normalise.scss
         error.scss
 
 #### Templates
-As there is no other content appearing on these pages (e.g. ads, hero, gallery), I have created only one layout template which pulls in the correct partials for each of the pages. For a larger project, I would expect that page elements such as article, article list, and page header would built as generic, reusable components. I have set up my partials to conform to this as closely as possible. I would also expect that different page types would require different layout templates on a larger project.
+As there is no other content appearing on these pages (e.g. ads, hero, gallery), I have created only one layout template which pulls in the correct partials for each page. For a larger project, I would expect that page elements such as article, article list, and page header to built as generic, reusable components. I have set up my partials to conform to this as closely as possible. I would also anticipate that different page types would require different layout templates on a larger project.
 
 #### Javascript
-A limitation might be "the construction/formatting of the data is limited by the use of a single data source (article.json).
+I have documented the build.js file using JSDocs but not included the compiled docs. Running the below command will generate the docs in an 'out' directory:
+
+```js
+jsdoc build.js
+```
+
+The construction and formatting of the data in the javascript is meant to handle the limitations of using a single data source (article.json) to populate different types of pages. This is all handled within a single file, however in real world situations where there are many other elements on a page requiring data from different sources, loading data should be handled by separate javascript files.
 
 
 ## Setup Issues
